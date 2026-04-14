@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Master Guide</title>
+    <link rel="stylesheet" href="contenedor.css">
+    <script src="contenedor.js" defer></script>
+</head>
+<body>
+    <nav>
+        <a href="grid.html" class="nav-link">Ir a Grid Properties</a>
+    </nav>
+
+    <section>
+        <h1>Flex Direction</h1>
+        <article>
+            <div class="controls">
+                <button data-prop="flex-direction" data-value="row">row</button>
+                <button data-prop="flex-direction" data-value="row-reverse">row-reverse</button>
+                <button data-prop="flex-direction" data-value="column">column</button>
+                <button data-prop="flex-direction" data-value="column-reverse">column-reverse</button>
+            </div>
+            <div class="container" id="container-direction">
+                <div class="box">1</div>
+                <div class="box">2</div>
+                <div class="box">3</div>
+            </div>
+        </article>
+    </section>
+
+    <section>
+        <h1>Alignment and Distribution</h1>
+        <article>
+            <h2>Justify Content (Eje Principal)</h2>
+            <div class="controls">
+                <button data-prop="justify-content" data-value="flex-start">start</button>
+                <button data-prop="justify-content" data-value="center">center</button>
+                <button data-prop="justify-content" data-value="flex-end">end</button>
+                <button data-prop="justify-content" data-value="space-between">between</button>
+                <button data-prop="justify-content" data-value="space-around">around</button>
+                <button data-prop="justify-content" data-value="space-evenly">evenly</button>
+            </div>
+            <div class="container" id="container-justify">
+                <div class="box">1</div>
+                <div class="box">2</div>
+                <div class="box">3</div>
+            </div>
+        </article>
+
+        <article>
+            <h2>Align Items (Eje Cruzado)</h2>
+            <div class="controls">
+                <button data-prop="align-items" data-value="stretch">stretch</button>
+                <button data-prop="align-items" data-value="flex-start">start</button>
+                <button data-prop="align-items" data-value="center">center</button>
+                <button data-prop="align-items" data-value="flex-end">end</button>
+                <button data-prop="align-items" data-value="baseline">baseline</button>
+            </div>
+            <div class="container" id="container-align" style="height: 150px;">
+                <div class="box">1</div>
+                <div class="box" style="font-size: 2rem;">2</div>
+                <div class="box">3</div>
+            </div>
+        </article>
+    </section>
+
+    <section>
+        <h1>Flex Items (Propiedades del Hijo 1)</h1>
+        <div class="controls">
+            <h3>Grow / Shrink / Order</h3>
+            <button data-item-prop="flex-grow" data-value="1">Grow 1</button>
+            <button data-item-prop="flex-grow" data-value="0">Grow 0</button>
+            <button data-item-prop="order" data-value="-1">Order -1</button>
+            <button data-item-prop="order" data-value="1">Order 1</button>
+        </div>
+        <div class="container">
+            <div class="box active-item" id="special-box">Target</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+        </div>
+    </section>
+</body>
+</html>
