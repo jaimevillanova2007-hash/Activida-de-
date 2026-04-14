@@ -1,0 +1,127 @@
+/* 1. CONFIGURACIÓN GLOBAL (Variables) */
+:root {
+    --primary: #ff4500;
+    --bg-dark: #1a1a1a;
+    --bg-sidebar: #222;
+    --bg-card: #333;
+    --text-white: #ffffff;
+    --transition: 0.3s ease;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+body { background-color: var(--bg-dark); color: var(--text-white); }
+
+/* =========================================
+   NUEVAS CLASES DE DIRECCIÓN (FLEX-DIRECTION)
+   ========================================= */
+.flex-row         { flex-direction: row; }         /* Horizontal (por defecto) */
+.flex-row-reverse { flex-direction: row-reverse; } /* Horizontal invertido */
+.flex-column      { flex-direction: column; }      /* Vertical */
+.flex-column-rev  { flex-direction: column-reverse; } /* Vertical invertido */
+
+
+/* 2. COMPONENTES DE NAVEGACIÓN */
+.navbar { 
+    background: var(--primary); 
+    display: flex; 
+    /* Por defecto es row, puedes cambiarlo con las clases de arriba */
+    justify-content: space-between; 
+    align-items: center;
+    padding: 15px 5%; 
+}
+
+.menu { 
+    display: flex; 
+    list-style: none; 
+    gap: 20px; 
+}
+
+/* 3. ESTRUCTURA PRINCIPAL (LAYOUT) */
+.layout { 
+    display: flex; 
+    min-height: 80vh; 
+    /* Si quieres la sidebar a la derecha, usarías flex-row-reverse */
+}
+
+
+
+/* 4. ÁREA DE CONTENIDO Y CARRUSEL */
+.content { 
+    flex: 1; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 20px; 
+}
+
+.slider-box { 
+    width: 100%; 
+    max-width: 600px; 
+    overflow: hidden; 
+    border-radius: 20px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
+}
+
+.slider-box ul { 
+    display: flex; 
+    width: 900%;
+    padding: 0; 
+    animation: bucle-circular 25s infinite ease-in-out; 
+}
+
+.slider-box li {
+    width: 100%; /* Cada li ocupa el ancho del visor */
+    list-style: none;
+}
+
+.card-item { width: 100%; list-style: none; background: var(--bg-card); }
+
+.card-item img { 
+    width: 100%; 
+    aspect-ratio: 16/9; 
+    object-fit: cover; 
+}
+
+.texto { padding: 20px; text-align: center; }
+.texto h4 { color: var(--primary); margin-bottom: 10px; }
+
+@keyframes bucle-circular {
+    /* 0% a 10%: Imagen 1 */
+    0%, 10% { transform: translateX(0); }
+    
+    /* 11.11% x 1: Imagen 2 */
+    12%, 22% { transform: translateX(-11.11%); }
+    
+    /* 11.11% x 2: Imagen 3 */
+    24%, 34% { transform: translateX(-22.22%); }
+    
+    /* 11.11% x 3: Imagen 4 */
+    36%, 46% { transform: translateX(-33.33%); }
+    
+    /* 11.11% x 4: Imagen 5 */
+    48%, 58% { transform: translateX(-44.44%); }
+    
+    /* 11.11% x 5: Imagen 6 */
+    60%, 70% { transform: translateX(-55.55%); }
+    
+    /* 11.11% x 6: Imagen 7 */
+    72%, 82% { transform: translateX(-66.66%); }
+    
+    /* 11.11% x 7: Imagen 8 */
+    84%, 94% { transform: translateX(-77.77%); }
+    
+    /* 11.11% x 8: Muestra el CLON de la Imagen 1 */
+    96%, 100% { transform: translateX(-88.88%); }
+}
+
+/* 6. PIE DE PÁGINA */
+.footer_abajo { 
+    background: #000; 
+    padding: 30px 5%; 
+    display: flex; 
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+    gap: 20px; 
+    border-top: 3px solid var(--primary); 
+}
