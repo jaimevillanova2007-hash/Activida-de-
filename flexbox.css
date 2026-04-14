@@ -1,0 +1,46 @@
+/* CONFIGURACIÓN BÁSICA */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    padding: 20px;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+h1 { text-align: center; margin-bottom: 20px; }
+
+/* EL CONTENEDOR PADRE */
+.contenedor {
+    display: flex;       /* Activa Flexbox */
+    background: white;
+    border: 2px solid #333;
+    padding: 15px;
+    margin-bottom: 30px;
+    gap: 10px;           /* Espacio entre las imágenes */
+}
+
+/* LAS DIRECCIONES */
+.row            { flex-direction: row; }
+.row-reverse    { flex-direction: row-reverse; }
+.column         { flex-direction: column; width: fit-content; } /* Fit-content para que no ocupe todo el ancho */
+.column-reverse { flex-direction: column-reverse; width: fit-content; }
+
+/* LAS CAJAS DE LAS IMÁGENES */
+.caja {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    border-radius: 8px;
+    overflow: hidden;    /* Corta la imagen para que no se salga del cuadro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ESTILO DE LA IMAGEN DENTRO DE LA CAJA */
+.caja img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* Ajusta la imagen al cuadro sin deformarla */
+}
+
+.contenedor-clon { margin-top: 50px; border-top: 1px solid #ccc; padding-top: 20px; }
